@@ -1,0 +1,28 @@
+div {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colonne su schermi grandi */
+    justify-items: center; /* Centra gli elementi all'interno della griglia */
+    gap: 1rem; /* Aggiunge spazio tra gli elementi della griglia */
+}
+
+/* Quando la larghezza dello schermo è inferiore a 1200px, usa 3 colonne */
+@media (max-width: 1200px) {
+    div {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Quando la larghezza dello schermo è inferiore a 900px, usa 2 colonne */
+@media (max-width: 900px) {
+    div {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Quando la larghezza dello schermo è inferiore a 600px, usa 1 colonna */
+@media (max-width: 600px) {
+    div {
+        grid-template-columns: 1fr;
+    }
+}

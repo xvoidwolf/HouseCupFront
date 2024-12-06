@@ -1,0 +1,31 @@
+article {
+    background-color: #fffafd; 
+    width: 280px;
+    border-radius: 10px;
+    margin: 10px;
+}
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.GRYFFINDOR {
+    background-color: #ffc4c4; 
+}
+.SLYTHERIN {
+    background-color: #b6ffd4; 
+}
+.HUFFLEPUFF {
+    background-color: #ffe9c4; 
+}
+.RAVENCLAW {
+    background-color: #cac4ff; 
+}

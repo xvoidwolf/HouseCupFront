@@ -1,0 +1,21 @@
+article {
+    background-color: #ffe9c4; 
+    width: 250px;
+    border-radius: 10px;
+    margin: 10px;
+}
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+#name {
+    padding-right: 5px;
+}
