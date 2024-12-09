@@ -15,7 +15,12 @@ export class StudentListComponent implements OnInit {
   studentDetail!: StudentDetail[];
   constructor(private studentService: StudentService){}
   ngOnInit(): void {
-    this.studentDetail = this.studentService.getStudentDetail();
+    this.studentService.getStudentDetail().subscribe(sl => {
+      console.log(sl);
+      this.studentDetail = sl;
+    }); //subscribe del servizio
+    //il modo in cui gestisco il risultato dell'observable^, riceve i risultati quando arriveranno
+    //.subscribe prende una lambda
   }
   
 
