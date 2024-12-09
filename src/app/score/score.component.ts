@@ -14,8 +14,6 @@ export class ScoreComponent implements OnInit {
   houseDetail!: HouseDetail[];
   constructor(private houseScoreService: HouseScoreService){}
   ngOnInit(): void {
-    this.houseDetail = this.houseScoreService.getHouseDetail();
+    this.houseScoreService.getHouseDetail().subscribe(hs => this.houseDetail = hs);
   }
-  
-
 }
