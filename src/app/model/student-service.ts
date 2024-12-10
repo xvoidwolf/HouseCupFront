@@ -20,6 +20,9 @@ export class StudentService{
     getStudentDetail(): Observable<StudentDetail[]> {
         return this.http.get<StudentDetail[]>("http://localhost:8080/student");
     }
+    getBestStudentsFromHouse():Observable<StudentDetail[]> {
+        return this.http.get<StudentDetail[]>("http://localhost:8080/student/class/"+ 1 +"/house/"+ 4 +"/bestStudent")
+    }
     //chiamata sarà asincrona
     //angular usa la libreria degli Observable
 }

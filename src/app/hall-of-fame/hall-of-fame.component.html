@@ -1,1 +1,6 @@
-<p>hall-of-fame works!</p>
+@if (students) {
+    @for (student of students; track $index) {
+        <app-card [detail] = 'student'></app-card>
+    }
+}
+
