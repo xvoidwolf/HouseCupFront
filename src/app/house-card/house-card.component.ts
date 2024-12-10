@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HouseDetail } from '../model/house-detail';
+import { HouseDto } from '../model/house-dto';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,6 +10,6 @@ import { RouterModule } from '@angular/router';
 })
 export class HouseCardComponent {
  @Input()
-    detail!: HouseDetail; 
+    detail!: HouseDto; 
   
 }

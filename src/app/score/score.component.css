@@ -5,6 +5,15 @@ div {
     justify-items: center; /* Centra gli elementi all'interno della griglia */
     gap: 1rem; /* Aggiunge spazio tra gli elementi della griglia */
 }
+#winner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: #ffe9c4;
+}
 
 /* Quando la larghezza dello schermo è inferiore a 1200px, usa 3 colonne */
 @media (max-width: 1200px) {
