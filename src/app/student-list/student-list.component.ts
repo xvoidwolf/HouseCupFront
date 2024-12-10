@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { StudentDetail } from '../model/student-detail';
 import { StudentService } from '../model/student-service';
 import { CardComponent } from '../card/card.component';
+import { HouseScoreService } from '../model/house-score-service';
+import { HouseRankingDto } from '../model/house-ranking-dto';
 
 
 @Component({
@@ -13,12 +15,14 @@ import { CardComponent } from '../card/card.component';
 })
 export class StudentListComponent implements OnInit {
   studentDetail!: StudentDetail[];
+  houseDetail!: HouseRankingDto;
   constructor(private studentService: StudentService){}
   ngOnInit(): void {
     this.studentService.getStudentDetail().subscribe(sl => {
       console.log(sl);
       this.studentDetail = sl;
-    }); //subscribe del servizio
+    }
+  ); //subscribe del servizio
     //il modo in cui gestisco il risultato dell'observable^, riceve i risultati quando arriveranno
     //.subscribe prende una lambda
   }

@@ -1,9 +1,9 @@
 div {
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colonne su schermi grandi */
-    justify-items: center; /* Centra gli elementi all'interno della griglia */
-    gap: 1rem; /* Aggiunge spazio tra gli elementi della griglia */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    justify-items: center; 
+    gap: 1rem; 
 }
 #winner {
     display: flex;

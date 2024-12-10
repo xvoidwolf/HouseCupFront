@@ -1,0 +1,13 @@
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: #ffe9c4;
+}
+a{
+    color: #c4e5ff;
+    
+}

@@ -1,6 +1,8 @@
 @if (students) {
-    @for (student of students; track $index) {
-        <app-card [detail] = 'student'></app-card>
-    }
+    <div>
+        @for (student of students; track $index) {
+            <app-card [detail] = 'student'></app-card>
+        }
+    </div>
 }
 

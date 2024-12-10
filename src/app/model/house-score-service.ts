@@ -3,6 +3,8 @@ import { HouseDto } from "./house-dto";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/internal/Observable";
 import { HouseRankingDto } from "./house-ranking-dto";
+import { ScoreComponent } from "../score/score.component";
+import { Data } from "@angular/router";
 
 @Injectable({
     providedIn:'root',
@@ -17,5 +19,8 @@ export class HouseScoreService {
     // ]
     getHouseDetail(): Observable<HouseRankingDto>{
         return this.http.get<HouseRankingDto>("http://localhost:8080/ranking");
+    }
+    getHouseScoreById(id: number):void {
+        let idk = this.http.get<ScoreComponent>("qui ci andrà il link per il back").subscribe((sc:Data) => {return sc});
     }
 }

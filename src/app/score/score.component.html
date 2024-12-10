@@ -1,14 +1,15 @@
-<article>
-    <div>
-        @for (house of houseDetail.rankings; track $index) {
-            <app-house-card [detail]="house"></app-house-card>
-        }
-    </div>
-    <div id="winner">
-        <h1>Winner</h1>
-        <app-house-card [detail]="houseDetail.winner"></app-house-card>
-    </div>
-</article>
-
+@if(houseDetail) {
+    <article>
+        <div>
+            @for (house of houseDetail.rankings; track $index) {
+                <app-house-card [detail]="house"></app-house-card>
+            }
+        </div>
+        <div id="winner">
+            <h1>Winner</h1>
+            <app-house-card [detail]="houseDetail.winner"></app-house-card>
+        </div>
+    </article>
+}
 
 
