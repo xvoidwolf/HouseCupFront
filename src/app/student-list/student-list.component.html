@@ -1,8 +1,8 @@
 @if (studentDetail) {
-    <div>
+    <div id="newStudent">
         <button routerLink="/student/newStudent">Create new Student</button>
     </div>
-    <div>
+    <div id="students">
         @for (student of studentDetail; track $index) {
             <app-card [detail] = 'student' (requestDelete)="performDelete($event)" (requestUpdate)="performUpdate($event)"></app-card>
         }

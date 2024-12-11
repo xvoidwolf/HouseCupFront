@@ -19,3 +19,23 @@ article {
 #name {
     padding-right: 5px;
 }
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+}
+button {
+    padding-block: 7px;
+    padding-inline: 20px;
+}
+#delete {
+    background-color: #fcb0c0;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+#update {
+    background-color: #b0fcca;
+    border-radius: 10px;
+    border: 1px solid black;
+}

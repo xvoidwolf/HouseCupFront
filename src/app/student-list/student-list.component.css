@@ -1,8 +1,20 @@
-div {
+#students {
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+}
+#newStudent {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+button {
+    padding-block: 10px;
+    padding-inline: 20px;
+    background-color: rgb(148, 204, 232);
+    border-radius: 10px;
+    border: 1px solid black;
 }
 @media (max-width: 1200px) {
     div {

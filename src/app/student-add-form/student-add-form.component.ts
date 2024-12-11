@@ -79,10 +79,21 @@ export class StudentAddFormComponent implements OnInit{
           id: this.studentForm.value.course
         }
       };
-        this.studentService.saveStudent(student).subscribe({
-          next: () => this.router.navigate(['/student']),
-          error: err => console.log(err)
-        }); //ts controlla che quest'oggetto rispetti l'interfaccia studentDetails
+    if (this.editMode) {
+      // Esegui UPDATE
+      const studentId = this.activatedRoute.snapshot.params['id'];
+      student.id = Number(studentId);
+      this.studentService.updateStudent(student).subscribe({
+        next: () => this.router.navigate(['/student']),
+        error: err => console.log(err)
+      });
+    } else {
+      // Esegui CREATE
+      this.studentService.saveStudent(student).subscribe({
+        next: () => this.router.navigate(['/student']),
+        error: err => console.log(err)
+      });
     }
   }
+}
 }

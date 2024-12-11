@@ -8,11 +8,9 @@
             <p id="name">{{detail.firstname}}</p>
             <p>{{detail.surname}}</p>
         </div>
-        <div>
-            <button (click)="onClickDelete()">Delete</button>
-        </div>
-        <div>
-            <button (click)="onClickUpdate()">Update</button>
+        <div id="buttons">
+            <button (click)="onClickDelete()" id="delete">Delete</button>
+            <button (click)="onClickUpdate()" id="update">Update</button>
         </div>
     </div>
 </article>

@@ -38,6 +38,9 @@ export class StudentService{
         }); //settare il giusto content type
         return this.http.post<StudentDetails>(`${HttpConfig.apiUrl}${this.urlExtension}`, student, { headers: hds }); 
     }
+    updateStudent(student:StudentDetails):Observable<StudentDetails> {
+        return this.http.put<StudentDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${student.id!}`, student); 
+    }
     deleteStudent(id:number):Observable<void> {
         return this.http.delete<void>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);
     }
