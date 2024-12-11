@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { StudentDetail } from '../model/student-detail';
+import { StudentSummary } from '../model/student-summary';
 import { ScoreComponent } from '../score/score.component';
 import { HouseScoreService } from '../model/house-score-service';
 
@@ -12,6 +12,17 @@ import { HouseScoreService } from '../model/house-score-service';
 })
 export class CardComponent {
   constructor(private router:Router){}
-@Input()
-detail!: StudentDetail; 
+  @Input()
+  detail!: StudentSummary; 
+
+  @Output() //delego tutto alla componente esteriore che la chiama, gli dico che quell'evento è successo e gli dico per quale studente passandogli l'id
+  requestDelete = new EventEmitter<number>(); 
+  onClickDelete() {
+    this.requestDelete.emit(this.detail.id);
+  }
+  @Output()
+  requestUpdate = new EventEmitter<number>();
+  onClickUpdate() {
+    this.requestUpdate.emit(this.detail.id);
+  }
 }

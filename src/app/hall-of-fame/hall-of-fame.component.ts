@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { StudentDetail } from '../model/student-detail';
+import { StudentSummary } from '../model/student-summary';
 import { StudentService } from '../model/student-service';
 import { CardComponent } from '../card/card.component';
 import { HouseDto } from '../model/house-dto';
@@ -13,7 +13,7 @@ import { HouseScoreService } from '../model/house-score-service';
   styleUrl: './hall-of-fame.component.css'
 })
 export class HallOfFameComponent implements OnInit{
-  students: StudentDetail[] = [];
+  students: StudentSummary[] = [];
   houses!:HouseDto[];
   houseId!:number;
   classId!:number;

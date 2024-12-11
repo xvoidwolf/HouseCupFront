@@ -5,11 +5,13 @@ import { Observable } from "rxjs/internal/Observable";
 import { HouseRankingDto } from "./house-ranking-dto";
 import { ScoreComponent } from "../score/score.component";
 import { Data } from "@angular/router";
+import { HttpConfig } from "../config/http-config";
 
 @Injectable({
     providedIn:'root',
 })
 export class HouseScoreService {
+    urlExtension = "/house";
     constructor(private http:HttpClient){}
     // private houseScore : HouseDetail [] = [
     //     {id:1, name:'GRYFFINDOR', score: 1000000, img:'/assets/images/Gryffindor.png'},
@@ -17,10 +19,13 @@ export class HouseScoreService {
     //     {id:3,name:'HUFFLEPUFF', score:1000, img:'/assets/images/Hufflepuff.png'},
     //     {id:4,name:'RAVENCLAW', score:0, img:'/assets/images/Ravenclaw.png'}
     // ]
-    getHouseDetail(): Observable<HouseRankingDto>{
-        return this.http.get<HouseRankingDto>("http://localhost:8080/ranking");
+    getHouseRankings(): Observable<HouseRankingDto>{
+        return this.http.get<HouseRankingDto>(`${HttpConfig.apiUrl}/ranking`);
     }
     getHouseScoreById(id: number):void {
         let idk = this.http.get<ScoreComponent>("qui ci andrà il link per il back").subscribe((sc:Data) => {return sc});
+    }
+    getHouses(): Observable<HouseDto[]>{
+        return this.http.get<HouseDto[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
 }

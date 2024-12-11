@@ -1,0 +1,70 @@
+@if (studentForm) {
+    <form (ngSubmit) = "onSubmit()" [formGroup] = 'studentForm'>
+        <div>
+            <div>
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" formControlName="firstname">
+            </div>
+            <div>
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" formControlName="surname">
+            </div>
+            <div>
+                <label for="dob">Date of birth:</label>
+                <input type="date" id="dob" formControlName="dob">
+            </div>
+            <div>
+                <div>
+                    <label> 
+                        <input type="radio" formControlName="sex" value="m"> Maschio
+                    </label>
+                    <label>
+                        <input type="radio" formControlName="sex" value="f"> Femmina
+                    </label>
+                    <label>
+                        <input type="radio" formControlName="sex" value="a"> Altro
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" formControlName="mail">
+            </div>
+            <div>
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" formControlName="phone">
+            </div>
+            <div>
+                <label for="background">Background:</label>
+                <input type="text" id="background" formControlName="background">
+            </div>
+            <div>
+                <label for="education">Education:</label>
+                <input type="text" id="education" formControlName="education">
+            </div>
+            <div>
+                <label for="pref">Prefetto:</label>
+                <input type="checkbox" id="pref" formControlName="pref">
+            </div>
+            <div>
+                <label for="course">Course:</label>
+                <select id="course" formControlName="course">
+                    @for (course of courses; track course.id) {
+                        <option [value]="course.id">{{course.className}}</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="house">House:</label>
+                <select id="house" formControlName="house">
+                    @for (house of houses; track house.id) {
+                        <option [value]="house.id">{{house.name}}</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <button>Send</button>
+            </div>
+        </div>
+    </form>
+}
