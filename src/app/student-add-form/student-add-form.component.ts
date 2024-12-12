@@ -65,6 +65,8 @@ export class StudentAddFormComponent implements OnInit{
         },
         error: err => console.log(err)
       });
+    } else {
+      this.editMode = false;
     }
   }
   onSubmit() {

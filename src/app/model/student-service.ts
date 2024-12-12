@@ -24,6 +24,18 @@ export class StudentService{
     //     {id:6, nome:'Lucrezia', cognome: 'Lauri'}
     // ]
     getStudentDetail(): Observable<StudentSummary[]> {
+        //prendere il token di autenticazione
+        const token = localStorage.getItem('jwtToken');
+        console.log(token);
+        let headers = new HttpHeaders({
+            'Authorization': `Bearer ${token}`,
+            'Content-Type':'application/json'
+        });
+        console.log(headers);
+        // if(token) {
+        //     headers = headers.set('Authorization', `Bearer ${token}`); //setto il token di auth (mi torna un nuovo header, per questo è headers =)
+        //     console.log(JSON.stringify(headers));
+        // }
         return this.http.get<StudentSummary[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
     getBestStudentsFromHouse(houseId:number, classId:number):Observable<StudentSummary[]>{
@@ -39,7 +51,10 @@ export class StudentService{
         return this.http.post<StudentDetails>(`${HttpConfig.apiUrl}${this.urlExtension}`, student, { headers: hds }); 
     }
     updateStudent(student:StudentDetails):Observable<StudentDetails> {
-        return this.http.put<StudentDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${student.id!}`, student); 
+        const hds = new HttpHeaders({
+            'Content-Type':'application/json'
+        }); //settare il giusto content type
+        return this.http.put<StudentDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${student.id!}`, student, {headers: hds}); 
     }
     deleteStudent(id:number):Observable<void> {
         return this.http.delete<void>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);

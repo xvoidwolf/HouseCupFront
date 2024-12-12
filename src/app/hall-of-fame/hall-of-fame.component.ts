@@ -19,7 +19,7 @@ export class HallOfFameComponent implements OnInit{
   classId!:number;
   constructor(private studentService:StudentService, private houseService:HouseScoreService){}
   ngOnInit(): void {
-    for(let i = 1; i<=4; i++){
+    for(let i = 1; i<=4; i++){ //momentaneo, da sistemare
       this.studentService.getBestStudentsFromHouse(i,1).subscribe({
         next: (student) => this.students.push(...student),
         error: err => console.log(err)
